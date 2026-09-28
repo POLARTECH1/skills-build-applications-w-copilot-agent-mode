@@ -5,7 +5,7 @@ import { connectDatabase } from './config/database.js'
 import { apiRouter } from './routes/api.js'
 
 const app = express()
-const port = Number(process.env.PORT ?? 8000)
+const port = 8000
 const apiBaseUrl = process.env.CODESPACE_NAME
   ? `https://${process.env.CODESPACE_NAME}-${port}.app.github.dev`
   : `http://localhost:${port}`
