@@ -6,9 +6,10 @@ import { apiRouter } from './routes/api.js'
 
 const app = express()
 const port = 8000
-const apiBaseUrl = process.env.CODESPACE_NAME
-  ? `https://${process.env.CODESPACE_NAME}-${port}.app.github.dev`
-  : `http://localhost:${port}`
+const codespaceName = process.env.CODESPACE_NAME
+const apiBaseUrl = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev`
+  : 'http://localhost:8000'
 
 app.use(cors())
 app.use(express.json())
